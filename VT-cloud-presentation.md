@@ -18,7 +18,7 @@ timothy.d.goff@nasa.gov
 ## Who am I?
 - Tim Goff
     - Earthdata Cloud Senior Developer
-    - Work from home in the beautiful Blue Ridge Mountains of VA
+    - Work from home in the beautiful New River Valley of VA
     - 16 years with Raytheon - All on NASA EED Contract
         - Started with legacy C++ applications
         - Moved to greenfield Java backend development
@@ -27,6 +27,8 @@ timothy.d.goff@nasa.gov
         - Legacy PaaS for Earthdata Applications
     - Currently
         - Develop and maintain IaaS reimplementation
+
+Notes: Didnt start in the cloud, but transitioned as apps I was working on moved
 
 ---
 <!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2017/06/14/16/20/network-2402637_1280.jpg"  data-background-opacity=".2"  -->
@@ -41,21 +43,43 @@ timothy.d.goff@nasa.gov
     - Allows cloud native application development using most of the growing suite provided by AWS
     - Developers want to be able to use the full potential of the cloud
 
+Notes: PaaS is by necessity more restrictive in terms of application design and available technologies.  But IaaS can be harder to govern.  From a developer view, you want all the things, but that makes the security/governance story a bit more complex
+
 ---
 <!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_1280.jpg"  data-background-opacity=".2"  -->
 ## Developing for the cloud
 - 12 factor app - https://12factor.net/
     - Simple, standalone services which do not have dependencies baked in
+    - Critical when deploying on a PaaS
 - Microservices
     - Multiple small independent services instead of a monolithic application
     - Indepdendently scalable services
-- Serverless
+- Serverless/containers
     - Lambda
     - ECS/EKS
 - Cattle vs Pets
 - Managed services
     - DB, CDN, etc
     - Fargate vs self managed ECS  
+
+--- 
+<!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2019/02/27/11/20/bird-migration-4023842_1280.jpg"  data-background-opacity=".2"  -->
+
+## Migrating to the Cloud
+
+- Lift and Shift
+    - Take existing app and infrastructure and deploy it in the cloud
+    - Seems easier and cheaper, but misses many benefits of the cloud
+- Cloud Native rewrite
+    - More work up front, but can end up with a cheaper more efficient system ultimately
+- Containerized, 12 factor apps are easier to port
+    - Good to keep these in mind when developing on prem.
+- Some legacy apps can/should be rewritten as lambdas
+    - BUT NOT ALL
+    - Deploy to EC2 instances where it make sense.
+    - A poorly designed/considered lambda can make things worse.
+
+Notes: The first lambda I wrote was a port of a legacy Ruby app.  But due to the way I implemented it, the cold start time was huge and it never made it to production until it was rewritten again as a better designed lambda.
 
 ---
 <!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2015/09/29/22/49/blueprint-964630_1280.jpg"  data-background-opacity=".2"  -->
@@ -129,12 +153,17 @@ myVPC:
 
 ---
 <!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2016/12/01/01/32/blue-ridge-1874266_1280.jpg"  data-background-opacity=".2"  -->
-## Next steps/Resources
+## Final Thoughts/Resources
 
 - Set up a free tier (AWS/Azure/GCP/etc) account
+    - No one knows everything
+    - No one follows their own best practices all the time.
 - Embrace Infrastructure as Code
 - Utilize cloud native concepts where possible
 - Follow people on twitter e.g @QuinnyPig, @jeffbarr
+- Podcasts/Newsletters: 
+    - https://www.lastweekinaws.com/podcast/aws-morning-brief/
+    - https://aws.amazon.com/blogs/
 - Reinvent: Virtual and Free this year! https://reinvent.awsevents.com/
 - Pursue cloud certification.  AWS probably more in demand, but Azure seems to be gaining stature.
 - ACloudGuru: Excellent certification prep, some of it free https://acloudguru.com/ 
