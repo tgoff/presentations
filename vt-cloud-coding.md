@@ -18,6 +18,7 @@ timothy.d.goff@nasa.gov
 ## Who am I?
 - Tim Goff
     - Earthdata Cloud Senior Developer
+    - Graduated '04 from University of Maryland
     - Work from home in the beautiful New River Valley of VA
     - 16 years with Raytheon - All on NASA EED Contract
         - Started with legacy C++ applications
@@ -28,29 +29,30 @@ timothy.d.goff@nasa.gov
     - Currently
         - Develop and maintain IaaS platform reimplementation
 
-Notes: Didnt start in the cloud, but organically tranistioned as the project evolved
+Notes: Didnt start in the cloud, but organically moved there as the project evolved.  Large project with lots of different teams.
 
 ---
 <!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2017/06/14/16/20/network-2402637_1280.jpg"  data-background-opacity=".2"  -->
 ## PaaS vs IaaS - Review
 - PaaS EDC - managed by Ruby backend and API
-    - V1: Applications sent in tar files.  Platform expanded and ran on an EC2 instance
-    - V1.1: Applications sent in Docker containers, platform initiated ECS services
+    - V1: Applications sent in tar files.  Platform ruby code unzipped and ran on an EC2 instance
+    - V1.1: Applications sent in Docker containers, platform ruby code initiated ECS services
 - Iaas EDC
     - Applications have the keys to full(*) AWS experience
     - Guardrails built to ensure applications are compliant, secure, and app owners cant do things they shouldnt be able to
 - Why IaaS?
     - Allows cloud native application development using most of the growing suite provided by AWS
     - Developers want to be able to use the full potential of the cloud
+    - But the number of services in the cloud is both an opportunity and risk.
 
-Notes: PaaS is by necessity more restrictive in terms of application design and available technologies.  But IaaS can be harder to govern.  From a developer view, you want all the things, but that makes the security/governance story a bit more complex
+Notes: PaaS is by necessity more restrictive in terms of application design and available services.  But IaaS can be harder to govern.  From a developer view, you want all the things, but that makes the security/governance story a bit more complex.  One is not the "right" answer all the time.
 
 ---
 <!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_1280.jpg"  data-background-opacity=".2"  -->
 ## Developing for the cloud
 - 12 factor app - https://12factor.net/
     - Simple, standalone services which do not have dependencies baked in
-    - Critical when deploying on a PaaS
+    - Critical when deploying via containers or on a PaaS where you do not control the infrastructure
 - Microservices
     - Multiple small independent services instead of a monolithic application
     - Indepdendently scalable services
@@ -61,6 +63,17 @@ Notes: PaaS is by necessity more restrictive in terms of application design and 
 - Managed services
     - DB, CDN, etc
     - Fargate vs self managed ECS  
+
+----
+From https://www.quora.com/Is-the-Twelve-Factor-App-methodology-correct
+<img src="https://qph.fs.quoracdn.net/main-qimg-027989c9ae13b4796b364f1970a3dc0d" width="60%">
+
+----
+## CMR microservices
+https://github.com/nasa/Common-Metadata-Repository
+
+## Earthdata Search serverless
+https://github.com/nasa/earthdata-search
 
 ---
 <!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2019/02/27/11/20/bird-migration-4023842_1280.jpg"  data-background-opacity=".2"  -->
