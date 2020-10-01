@@ -62,9 +62,8 @@ Notes: PaaS is by necessity more restrictive in terms of application design and 
     - DB, CDN, etc
     - Fargate vs self managed ECS  
 
---- 
+---
 <!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2019/02/27/11/20/bird-migration-4023842_1280.jpg"  data-background-opacity=".2"  -->
-
 ## Migrating to the Cloud
 
 - Lift and Shift
