@@ -26,9 +26,9 @@ timothy.d.goff@nasa.gov
         - Clojure metadata catalog development
         - Legacy PaaS for Earthdata Applications
     - Currently
-        - Develop and maintain IaaS reimplementation
+        - Develop and maintain IaaS platform reimplementation
 
-Notes: Didnt start in the cloud, but transitioned as apps I was working on moved
+Notes: Didnt start in the cloud, but organically tranistioned as the project evolved
 
 ---
 <!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2017/06/14/16/20/network-2402637_1280.jpg"  data-background-opacity=".2"  -->
@@ -121,7 +121,8 @@ resource "aws_subnet" "private_app" {
   }
 }
 ```
-
+---
+## IAC example
 ### CloudFormation
 ```yaml
 myVPC:
@@ -137,7 +138,7 @@ myVPC:
 ```
 
 ---
-<!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2018/02/15/18/29/devops-3155972_1280.jpg"  data-background-opacity=".2"  -->
+<!-- .slide: data-background-image="https://cdn.pixabay.com/photo/2018/02/15/18/29/devops-3155972_1280.jpg"  data-background-opacity=".1"  -->
 
 ## CICD
 
